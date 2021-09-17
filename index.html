@@ -4,7 +4,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">    
         <title>Screen Test</title>
-        <style>
+        <style> 
+            /*table style*/
             table, td {
             border: 1px solid black;
             margin-left:auto;
@@ -13,6 +14,7 @@
             </style>
         <script>
         function Insert(){
+            /*Insert Student Javascript*/
             var table=document.getElementById("myTable");
             var row=table.insertRow(-1);
             var cell1=row.insertCell(0);
@@ -25,35 +27,45 @@
         }  
         function deleterow()
         {
+            /*Delete Student Javascript*/
             var table = document.getElementById("myTable");
             var row = table.getElementsByTagName('tr');
             if(row.length!='1'){
                 row[row.length - 1].outerHTML='';
             }
+            /*Don't delete column names*/
         }
         </script>
 
     </head>
     <body>
     <h1>Screen Test</h1>
-    <p>populate a table of students</p>
+    <p>populate a table of students </p>
+
+    <!---form to add students-
+    "It should be also possible to edit any line of the table
+    (not necessarily inside the table itself though --up to you).
+    Your code should make sure that fields are validated before 
+    the input is inserted in the table."
+    -->
 
     <form onsubmit="Insert(); return false;">
-        <input type="text" id="txt1" placeholder="enter student name" required/></br>
-        <input type="email" id="txt2" placeholder="enter student email" required/></br>
-        <select id="txt3">
+        <input type="text" id="txt1" placeholder="enter student name" required/><br>
+        <input type="email" id="txt2" placeholder="enter student email" required/><br>
+        <select id="txt3">            
             <option value="freshman">freshman</option>
             <option value="sophomore">sophomore</option>
             <option value="junior">junior</option>
             <option value="senior">senior</option>
-          </select></br>
+          </select><br>
         <input type="submit" value="Add New Student" />
         <input type="reset" value="Clear Fields"/>
 
     </form>
-    
+
         <table id="myTable">
         <tr id="myRow">
+        <!--intial row with column names-->>
         <td>Name</td>
         <td>Email</td>
         <td>Level</td>
